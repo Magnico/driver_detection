@@ -1,25 +1,24 @@
-
 import os
 import pickle
-import time
 import torch
 
 import cv2
 import numpy as np
-import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten, Conv2D, MaxPooling2D
+from tensorflow.keras.layers import (
+    Dense, Dropout, Activation, Flatten, Conv2D, MaxPooling2D
+)
 
 from PIL import Image
-import matplotlib.pyplot as plt
 from transformers import BeitFeatureExtractor, BeitForSemanticSegmentation
 from datasets import load_dataset
 from roboflow import Roboflow
 import torch.nn.functional as F
 import torchvision.transforms as transforms
 
-
+print("Librerias importadas correctamente.")
+print()
 
 def download_proyect(path):
     model = path.split('/')[-1]
@@ -32,7 +31,12 @@ def download_proyect(path):
     return
 
 
-def detect_body(image, save = False, class_index = 12, save_path = './frames', filename = 'result.png'):
+def detect_body(
+        image,
+        save=False,
+        class_index=12,
+        save_path='./frames',
+        filename='result.png'):
     global body_model
 
     # Preprocesamiento de la imagen
@@ -107,6 +111,7 @@ def prepare_model_data(path):
         return [X_train, X_test, y_train, y_test, categories_dict]
     return
 
+
 def train_model(path, data):
     modelo = path.split('/')[-1]
     if modelo == 'body.pkl':
@@ -151,11 +156,11 @@ def train_model(path, data):
             base.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
             # Entrenamiento
-            base.fit(X_train, y_train, epochs=5, validation_data=(X_test, y_test))
+            base.fit(X_train, y_train, epochs=6, validation_data=(X_test, y_test))
 
         else:
             print("No todas las imágenes tienen la misma forma. Asegúrate de preprocesarlas para que tengan la misma forma antes de alimentarlas al modelo.")
-    
+
         return base
 
 
@@ -187,11 +192,11 @@ def init_model(path):
 def load_models():
     global body_model, base_model
 
-    body_model = init_model("D:/ejose/GitProjects/driver_distraction/models/body.pkl")
+    body_model = init_model("./models/body.pkl")
 
     print()
 
-    base_model = init_model("D:/ejose/GitProjects/driver_distraction/models/base.pkl")
+    base_model = init_model("./models/base.pkl")
 
 
 load_models()
