@@ -10,6 +10,11 @@ from tensorflow.keras.layers import (
     Dense, Dropout, Activation, Flatten, Conv2D, MaxPooling2D
 )
 
+
+import base64
+import io
+import requests
+
 from PIL import Image
 from transformers import BeitFeatureExtractor, BeitForSemanticSegmentation
 from datasets import load_dataset
@@ -20,12 +25,14 @@ import torchvision.transforms as transforms
 print("Librerias importadas correctamente.")
 print()
 
+
 def download_proyect(path):
     model = path.split('/')[-1]
 
     if model == 'base.pkl':
         rf = Roboflow(api_key='mjAeKepHoqRRVOJpbG3W')
-        project = rf.workspace("new-workspace-vrhvx").project("distracted-driver-detection")
+        project = rf.workspace(
+            "new-workspace-vrhvx").project("distracted-driver-detection")
         project.version(3).download("tfrecord")
 
     return
@@ -62,7 +69,8 @@ def detect_body(
     image_tensor = transform(image).unsqueeze(0)
 
     # Resize the binary mask to match the image dimensions
-    binary_mask_resized = F.interpolate(binary_mask.unsqueeze(0).unsqueeze(0), size=image_tensor.shape[2:], mode='nearest').squeeze(0).squeeze(0)
+    binary_mask_resized = F.interpolate(binary_mask.unsqueeze(0).unsqueeze(
+        0), size=image_tensor.shape[2:], mode='nearest').squeeze(0).squeeze(0)
 
     # Create a dark tensor (all zeros)
     dark_tensor = torch.zeros_like(image_tensor)
@@ -103,10 +111,12 @@ def prepare_model_data(path):
         y = np.array(y)
 
         # Convertir etiquetas a números
-        categories_dict = {category: index for index, category in enumerate(set(y))}
+        categories_dict = {category: index for index,
+                           category in enumerate(set(y))}
         y = np.array([categories_dict[label] for label in y])
 
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, stratify=y)
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.3, stratify=y)
 
         return [X_train, X_test, y_train, y_test, categories_dict]
     return
@@ -115,8 +125,10 @@ def prepare_model_data(path):
 def train_model(path, data):
     modelo = path.split('/')[-1]
     if modelo == 'body.pkl':
-        feature_extractor = BeitFeatureExtractor.from_pretrained('microsoft/beit-base-finetuned-ade-640-640')
-        body = BeitForSemanticSegmentation.from_pretrained('microsoft/beit-base-finetuned-ade-640-640')
+        feature_extractor = BeitFeatureExtractor.from_pretrained(
+            'microsoft/beit-base-finetuned-ade-640-640')
+        body = BeitForSemanticSegmentation.from_pretrained(
+            'microsoft/beit-base-finetuned-ade-640-640')
         return [feature_extractor, body]
 
     if modelo == 'base.pkl':
@@ -153,10 +165,12 @@ def train_model(path, data):
             base.add(Activation('softmax'))
 
             # Compilación del modelo
-            base.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+            base.compile(
+                optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
             # Entrenamiento
-            base.fit(X_train, y_train, epochs=6, validation_data=(X_test, y_test))
+            base.fit(X_train, y_train, epochs=6,
+                     validation_data=(X_test, y_test))
 
         else:
             print("No todas las imágenes tienen la misma forma. Asegúrate de preprocesarlas para que tengan la misma forma antes de alimentarlas al modelo.")
@@ -197,6 +211,38 @@ def load_models():
     print()
 
     base_model = init_model("./models/base.pkl")
+
+
+def query_huggin_face(filename):
+    API_URL = "https://api-inference.huggingface.co/models/microsoft/beit-base-finetuned-ade-640-640"
+    headers = {"Authorization": f"Bearer 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"}
+    with open(filename, "rb") as f:
+        data = f.read()
+    response = requests.post(API_URL, headers=headers, data=data)
+    return response.json()
+
+
+def applyPersonMask(frame):
+    response = query_huggin_face(frame)
+    person_mask = [item['mask']
+                   for item in response if item['label'] == 'person']
+    person_mask = person_mask[0] if person_mask else None
+
+    mask_data = base64.b64decode(person_mask)
+
+    mask_image = Image.open(io.BytesIO(mask_data)).convert("L")
+
+    original_image = Image.open(frame).convert("RGBA")
+    if original_image.size != mask_image.size:
+        mask_image = mask_image.resize(original_image.size)
+
+    transparent_image = Image.new("RGBA", original_image.size, (0, 0, 0, 0))
+
+    recortada_image = Image.composite(
+        original_image, transparent_image, mask_image)
+
+    recortada_image.save("imagen_recortada_con_mascara.png")
+    recortada_image.show()
 
 
 load_models()
