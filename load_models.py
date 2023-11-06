@@ -152,12 +152,16 @@ def train_model(path, data):
             base.add(Dropout(0.2))
 
             # Capa 2
-            base.add(Conv2D(20, (3, 3), kernel_regularizer='l1'))
+            base.add(Conv2D(50, (3, 3), kernel_regularizer='l1'))
+            base.add(Activation('relu'))
+
+            # Capa 2
+            base.add(Conv2D(50, (3, 3), kernel_regularizer='l1'))
             base.add(Activation('relu'))
 
             # Capa 3
             base.add(Flatten())
-            base.add(Dense(20))
+            base.add(Dense(30))
             base.add(Activation('relu'))
 
             # Capa de salida
