@@ -1,5 +1,4 @@
 venv/
-models/
 *.mp4
 Distracted-Driver-Detection-3/
 yolov8n-cls.pt
