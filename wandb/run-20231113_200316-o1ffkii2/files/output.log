@@ -1,0 +1,157 @@
+[34m[1mtrain: [39m[22mScanning C:\Users\domai\Desktop\PFJUPITER\driver_detection\processed_dataset\Mask\train... 6326 images, 0 corrupt: 100%|██████████| 6326/6326 [00:00<?, ?it/s]
+[34m[1mval: [39m[22mScanning C:\Users\domai\Desktop\PFJUPITER\driver_detection\processed_dataset\Mask\val... 151 images, 0 corrupt: 100%|██████████| 151/151 [00:00<?, ?it/s]
+[34m[1moptimizer:[39m[22m 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically...
+[34m[1moptimizer:[39m[22m AdamW(lr=0.000714, momentum=0.9) with parameter groups 26 weight(decay=0.0), 27 weight(decay=0.0005), 27 bias(decay=0.0)
+Image sizes 224 train, 224 val
+Using 0 dataloader workers
+Logging results to [1mmodels\107
+Starting training for 1 epochs...
+      Epoch    GPU_mem       loss  Instances       Size
+
+
+        1/1         0G     0.5119         16        224:   2%|▏         | 9/396 [00:05<03:42,  1.74it/s]
+"wandb" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.
+UsageError: unrecognized arguments: 4fe204d9d24026480f7e9f42423087b20279ef32
+New https://pypi.org/project/ultralytics/8.0.209 available  Update with 'pip install -U ultralytics'
+Ultralytics YOLOv8.0.208  Python-3.8.10 torch-2.1.0+cpu CPU (AMD Ryzen 5 5600 6-Core Processor)
+[34m[1mengine\trainer: [39m[22mtask=classify, mode=train, model=yolov8s-cls.pt, data=./processed_dataset/Mask, epochs=1, patience=50, batch=16, imgsz=224, save=True, save_period=-1, cache=False, device=None, workers=8, project=models, name=108, exist_ok=False, pretrained=True, optimizer=auto, verbose=True, seed=0, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=10, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, save_hybrid=False, conf=None, iou=0.7, max_det=300, half=False, dnn=False, plots=True, source=None, show=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, vid_stride=1, stream_buffer=False, line_width=None, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, boxes=True, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=False, opset=None, workspace=4, nms=False, lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, label_smoothing=0.0, nbs=64, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, mosaic=1.0, mixup=0.0, copy_paste=0.0, cfg=None, tracker=botsort.yaml, save_dir=models\108
+[34m[1mtrain:[39m[22m C:\Users\domai\Desktop\PFJUPITER\driver_detection\processed_dataset\Mask\train... found 6326 images in 7 classes
+[34m[1mval:[39m[22m C:\Users\domai\Desktop\PFJUPITER\driver_detection\processed_dataset\Mask\val... found 151 images in 7 classes
+[34m[1mtest:[39m[22m None...
+                   from  n    params  module                                       arguments
+  0                  -1  1       928  ultralytics.nn.modules.conv.Conv             [3, 32, 3, 2]
+  1                  -1  1     18560  ultralytics.nn.modules.conv.Conv             [32, 64, 3, 2]
+  2                  -1  1     29056  ultralytics.nn.modules.block.C2f             [64, 64, 1, True]
+  3                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]
+  4                  -1  2    197632  ultralytics.nn.modules.block.C2f             [128, 128, 2, True]
+  5                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]
+  6                  -1  2    788480  ultralytics.nn.modules.block.C2f             [256, 256, 2, True]
+  7                  -1  1   1180672  ultralytics.nn.modules.conv.Conv             [256, 512, 3, 2]
+  8                  -1  1   1838080  ultralytics.nn.modules.block.C2f             [512, 512, 1, True]
+  9                  -1  1    666887  ultralytics.nn.modules.head.Classify         [512, 7]
+YOLOv8s-cls summary: 99 layers, 5089703 parameters, 5089703 gradients, 12.6 GFLOPs
+Transferred 158/158 items from pretrained weights
+[34m[1mtrain: [39m[22mScanning C:\Users\domai\Desktop\PFJUPITER\driver_detection\processed_dataset\Mask\train... 6326 images, 0 corrupt: 100%|██████████| 6326/6326 [00:00<?, ?it/s]
+[34m[1mval: [39m[22mScanning C:\Users\domai\Desktop\PFJUPITER\driver_detection\processed_dataset\Mask\val... 151 images, 0 corrupt: 100%|██████████| 151/151 [00:00<?, ?it/s]
+[34m[1moptimizer:[39m[22m 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically...
+[34m[1moptimizer:[39m[22m AdamW(lr=0.000714, momentum=0.9) with parameter groups 26 weight(decay=0.0), 27 weight(decay=0.0005), 27 bias(decay=0.0)
+Image sizes 224 train, 224 val
+Using 0 dataloader workers
+Logging results to [1mmodels\108
+Starting training for 1 epochs...
+      Epoch    GPU_mem       loss  Instances       Size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        1/1         0G     0.2032          6        224: 100%|██████████| 396/396 [03:16<00:00,  2.01it/s]
+
+               classes   top1_acc   top5_acc: 100%|██████████| 5/5 [00:01<00:00,  2.68it/s]
+                   all      0.656      0.987
+1 epochs completed in 0.056 hours.
+Optimizer stripped from models\108\weights\last.pt, 10.3MB
+Optimizer stripped from models\108\weights\best.pt, 10.3MB
+Validating models\108\weights\best.pt...
+Ultralytics YOLOv8.0.208  Python-3.8.10 torch-2.1.0+cpu CPU (AMD Ryzen 5 5600 6-Core Processor)
+YOLOv8s-cls summary (fused): 73 layers, 5084167 parameters, 0 gradients, 12.5 GFLOPs
+[34m[1mtrain:[39m[22m C:\Users\domai\Desktop\PFJUPITER\driver_detection\processed_dataset\Mask\train... found 6326 images in 7 classes
+[34m[1mval:[39m[22m C:\Users\domai\Desktop\PFJUPITER\driver_detection\processed_dataset\Mask\val... found 151 images in 7 classes
+[34m[1mtest:[39m[22m None...
+               classes   top1_acc   top5_acc: 100%|██████████| 5/5 [00:01<00:00,  2.99it/s]
+                   all      0.656      0.987
+Speed: 0.0ms preprocess, 8.1ms inference, 0.0ms loss, 0.0ms postprocess per image
+Results saved to [1mmodels\108
+Results saved to [1mmodels\108

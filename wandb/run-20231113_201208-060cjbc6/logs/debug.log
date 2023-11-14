@@ -1,0 +1,74 @@
+2023-11-13 20:12:08,693 INFO    MainThread:18300 [wandb_setup.py:_flush():76] Current SDK version is 0.16.0
+2023-11-13 20:12:08,693 INFO    MainThread:18300 [wandb_setup.py:_flush():76] Configure stats pid to 18300
+2023-11-13 20:12:08,693 INFO    MainThread:18300 [wandb_setup.py:_flush():76] Loading settings from C:\Users\domai\.config\wandb\settings
+2023-11-13 20:12:08,693 INFO    MainThread:18300 [wandb_setup.py:_flush():76] Loading settings from c:\Users\domai\Desktop\PFJUPITER\driver_detection\wandb\settings
+2023-11-13 20:12:08,693 INFO    MainThread:18300 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-11-13 20:12:08,693 INFO    MainThread:18300 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-11-13 20:12:08,693 INFO    MainThread:18300 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-11-13 20:12:08,694 INFO    MainThread:18300 [wandb_init.py:_log_setup():524] Logging user logs to c:\Users\domai\Desktop\PFJUPITER\driver_detection\wandb\run-20231113_201208-060cjbc6\logs\debug.log
+2023-11-13 20:12:08,694 INFO    MainThread:18300 [wandb_init.py:_log_setup():525] Logging internal logs to c:\Users\domai\Desktop\PFJUPITER\driver_detection\wandb\run-20231113_201208-060cjbc6\logs\debug-internal.log
+2023-11-13 20:12:08,694 INFO    MainThread:18300 [wandb_init.py:init():564] calling init triggers
+2023-11-13 20:12:08,694 INFO    MainThread:18300 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {'task': 'classify', 'mode': 'train', 'model': 'yolov8s-cls.pt', 'data': './processed_dataset/Mask', 'epochs': 1, 'patience': 50, 'batch': 16, 'imgsz': 224, 'save': True, 'save_period': -1, 'cache': False, 'device': None, 'workers': 0, 'project': 'models', 'name': '1011', 'exist_ok': False, 'pretrained': True, 'optimizer': 'auto', 'verbose': True, 'seed': 0, 'deterministic': True, 'single_cls': False, 'rect': False, 'cos_lr': False, 'close_mosaic': 10, 'resume': False, 'amp': True, 'fraction': 1.0, 'profile': False, 'freeze': None, 'overlap_mask': True, 'mask_ratio': 4, 'dropout': 0.0, 'val': True, 'split': 'val', 'save_json': False, 'save_hybrid': False, 'conf': None, 'iou': 0.7, 'max_det': 300, 'half': False, 'dnn': False, 'plots': True, 'source': None, 'show': False, 'save_txt': False, 'save_conf': False, 'save_crop': False, 'show_labels': True, 'show_conf': True, 'vid_stride': 1, 'stream_buffer': False, 'line_width': None, 'visualize': False, 'augment': False, 'agnostic_nms': False, 'classes': None, 'retina_masks': False, 'boxes': True, 'format': 'torchscript', 'keras': False, 'optimize': False, 'int8': False, 'dynamic': False, 'simplify': False, 'opset': None, 'workspace': 4, 'nms': False, 'lr0': 0.01, 'lrf': 0.01, 'momentum': 0.937, 'weight_decay': 0.0005, 'warmup_epochs': 3.0, 'warmup_momentum': 0.8, 'warmup_bias_lr': 0.0, 'box': 7.5, 'cls': 0.5, 'dfl': 1.5, 'pose': 12.0, 'kobj': 1.0, 'label_smoothing': 0.0, 'nbs': 64, 'hsv_h': 0.015, 'hsv_s': 0.7, 'hsv_v': 0.4, 'degrees': 0.0, 'translate': 0.1, 'scale': 0.5, 'shear': 0.0, 'perspective': 0.0, 'flipud': 0.0, 'fliplr': 0.5, 'mosaic': 1.0, 'mixup': 0.0, 'copy_paste': 0.0, 'cfg': None, 'tracker': 'botsort.yaml', 'save_dir': 'models\\1011'}
+2023-11-13 20:12:08,695 INFO    MainThread:18300 [wandb_init.py:init():614] starting backend
+2023-11-13 20:12:08,695 INFO    MainThread:18300 [wandb_init.py:init():618] setting up manager
+2023-11-13 20:12:08,696 INFO    MainThread:18300 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2023-11-13 20:12:08,697 INFO    MainThread:18300 [wandb_init.py:init():624] backend started and connected
+2023-11-13 20:12:08,705 INFO    MainThread:18300 [wandb_run.py:_label_probe_notebook():1294] probe notebook
+2023-11-13 20:12:08,705 INFO    MainThread:18300 [wandb_run.py:_label_probe_notebook():1304] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-11-13 20:12:08,705 INFO    MainThread:18300 [wandb_init.py:init():716] updated telemetry
+2023-11-13 20:12:08,740 INFO    MainThread:18300 [wandb_init.py:init():749] communicating run to backend with 90.0 second timeout
+2023-11-13 20:13:39,525 ERROR   MainThread:18300 [wandb_init.py:init():775] encountered error: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-11-13 20:13:39,639 ERROR   MainThread:18300 [wandb_init.py:init():1184] Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "c:\Users\domai\AppData\Local\Programs\Python\Python38\lib\site-packages\wandb\sdk\wandb_init.py", line 1166, in init
+    run = wi.init()
+  File "c:\Users\domai\AppData\Local\Programs\Python\Python38\lib\site-packages\wandb\sdk\wandb_init.py", line 781, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-11-13 20:14:16,360 INFO    MainThread:18300 [wandb_setup.py:_flush():76] Current SDK version is 0.16.0
+2023-11-13 20:14:16,361 INFO    MainThread:18300 [wandb_setup.py:_flush():76] Configure stats pid to 18300
+2023-11-13 20:14:16,361 INFO    MainThread:18300 [wandb_setup.py:_flush():76] Loading settings from C:\Users\domai\.config\wandb\settings
+2023-11-13 20:14:16,361 INFO    MainThread:18300 [wandb_setup.py:_flush():76] Loading settings from c:\Users\domai\Desktop\PFJUPITER\driver_detection\wandb\settings
+2023-11-13 20:14:16,361 INFO    MainThread:18300 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-11-13 20:14:16,361 INFO    MainThread:18300 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-11-13 20:14:16,361 INFO    MainThread:18300 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-11-13 20:14:16,362 INFO    MainThread:18300 [wandb_init.py:_log_setup():524] Logging user logs to c:\Users\domai\Desktop\PFJUPITER\driver_detection\wandb\run-20231113_201416-703wp6ud\logs\debug.log
+2023-11-13 20:14:16,362 INFO    MainThread:18300 [wandb_init.py:_log_setup():525] Logging internal logs to c:\Users\domai\Desktop\PFJUPITER\driver_detection\wandb\run-20231113_201416-703wp6ud\logs\debug-internal.log
+2023-11-13 20:14:16,362 INFO    MainThread:18300 [wandb_init.py:init():564] calling init triggers
+2023-11-13 20:14:16,362 INFO    MainThread:18300 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {'task': 'classify', 'mode': 'train', 'model': 'yolov8s-cls.pt', 'data': './processed_dataset/Mask', 'epochs': 1, 'patience': 50, 'batch': 16, 'imgsz': 224, 'save': True, 'save_period': -1, 'cache': False, 'device': None, 'workers': 0, 'project': 'models', 'name': '1012', 'exist_ok': False, 'pretrained': True, 'optimizer': 'auto', 'verbose': True, 'seed': 0, 'deterministic': True, 'single_cls': False, 'rect': False, 'cos_lr': False, 'close_mosaic': 10, 'resume': False, 'amp': True, 'fraction': 1.0, 'profile': False, 'freeze': None, 'overlap_mask': True, 'mask_ratio': 4, 'dropout': 0.0, 'val': True, 'split': 'val', 'save_json': False, 'save_hybrid': False, 'conf': None, 'iou': 0.7, 'max_det': 300, 'half': False, 'dnn': False, 'plots': True, 'source': None, 'show': False, 'save_txt': False, 'save_conf': False, 'save_crop': False, 'show_labels': True, 'show_conf': True, 'vid_stride': 1, 'stream_buffer': False, 'line_width': None, 'visualize': False, 'augment': False, 'agnostic_nms': False, 'classes': None, 'retina_masks': False, 'boxes': True, 'format': 'torchscript', 'keras': False, 'optimize': False, 'int8': False, 'dynamic': False, 'simplify': False, 'opset': None, 'workspace': 4, 'nms': False, 'lr0': 0.01, 'lrf': 0.01, 'momentum': 0.937, 'weight_decay': 0.0005, 'warmup_epochs': 3.0, 'warmup_momentum': 0.8, 'warmup_bias_lr': 0.0, 'box': 7.5, 'cls': 0.5, 'dfl': 1.5, 'pose': 12.0, 'kobj': 1.0, 'label_smoothing': 0.0, 'nbs': 64, 'hsv_h': 0.015, 'hsv_s': 0.7, 'hsv_v': 0.4, 'degrees': 0.0, 'translate': 0.1, 'scale': 0.5, 'shear': 0.0, 'perspective': 0.0, 'flipud': 0.0, 'fliplr': 0.5, 'mosaic': 1.0, 'mixup': 0.0, 'copy_paste': 0.0, 'cfg': None, 'tracker': 'botsort.yaml', 'save_dir': 'models\\1012'}
+2023-11-13 20:14:16,362 INFO    MainThread:18300 [wandb_init.py:init():614] starting backend
+2023-11-13 20:14:16,362 INFO    MainThread:18300 [wandb_init.py:init():618] setting up manager
+2023-11-13 20:14:16,364 INFO    MainThread:18300 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn, using: spawn
+2023-11-13 20:14:16,365 INFO    MainThread:18300 [wandb_init.py:init():624] backend started and connected
+2023-11-13 20:14:16,374 INFO    MainThread:18300 [wandb_run.py:_label_probe_notebook():1294] probe notebook
+2023-11-13 20:14:16,374 INFO    MainThread:18300 [wandb_run.py:_label_probe_notebook():1304] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-11-13 20:14:16,374 INFO    MainThread:18300 [wandb_init.py:init():716] updated telemetry
+2023-11-13 20:14:16,409 INFO    MainThread:18300 [wandb_init.py:init():749] communicating run to backend with 90.0 second timeout
+2023-11-13 20:14:21,459 WARNING MainThread:18300 [wandb_init.py:init():1188] interrupted
+Traceback (most recent call last):
+  File "c:\Users\domai\AppData\Local\Programs\Python\Python38\lib\site-packages\wandb\sdk\wandb_init.py", line 1166, in init
+    run = wi.init()
+  File "c:\Users\domai\AppData\Local\Programs\Python\Python38\lib\site-packages\wandb\sdk\wandb_init.py", line 752, in init
+    result = run_init_handle.wait(
+  File "c:\Users\domai\AppData\Local\Programs\Python\Python38\lib\site-packages\wandb\sdk\lib\mailbox.py", line 283, in wait
+    found, abandoned = self._slot._get_and_clear(timeout=wait_timeout)
+  File "c:\Users\domai\AppData\Local\Programs\Python\Python38\lib\site-packages\wandb\sdk\lib\mailbox.py", line 130, in _get_and_clear
+    if self._wait(timeout=timeout):
+  File "c:\Users\domai\AppData\Local\Programs\Python\Python38\lib\site-packages\wandb\sdk\lib\mailbox.py", line 126, in _wait
+    return self._event.wait(timeout=timeout)
+  File "c:\Users\domai\AppData\Local\Programs\Python\Python38\lib\threading.py", line 558, in wait
+    signaled = self._cond.wait(timeout)
+  File "c:\Users\domai\AppData\Local\Programs\Python\Python38\lib\threading.py", line 306, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+2023-11-13 20:15:13,852 INFO    MainThread:18300 [wandb_init.py:init():564] calling init triggers
+2023-11-13 20:15:13,852 INFO    MainThread:18300 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {}
+2023-11-13 20:19:25,755 INFO    MainThread:18300 [wandb_init.py:init():564] calling init triggers
+2023-11-13 20:19:25,756 INFO    MainThread:18300 [wandb_init.py:init():571] wandb.init called with sweep_config: {}
+config: {}

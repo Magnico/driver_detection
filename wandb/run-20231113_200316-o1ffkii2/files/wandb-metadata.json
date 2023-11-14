@@ -1,0 +1,44 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.8.10",
+    "heartbeatAt": "2023-11-14T01:03:16.817631",
+    "startedAt": "2023-11-14T01:03:16.199745",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "<python with no main file>",
+    "codePathLocal": null,
+    "git": {
+        "remote": "git@github.com:Magnico/driver_detection.git",
+        "commit": "cc59bdce5312bdaef30c510062feb05385e52ee3"
+    },
+    "email": "dilanj.trianas@gmail.com",
+    "root": "C:/Users/domai/Desktop/PFJUPITER/driver_detection",
+    "host": "DESKTOP-4ONI89M",
+    "username": "domai",
+    "executable": "c:\\Users\\domai\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 3501.0,
+        "min": 0.0,
+        "max": 3501.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3501.0,
+            "min": 0.0,
+            "max": 3501.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 232.32776260375977,
+            "used": 219.52085494995117
+        }
+    },
+    "memory": {
+        "total": 31.925445556640625
+    }
+}
