@@ -5,3 +5,5 @@ yolov8n-cls.pt
 yolov8n-seg.pt
 yolov8s-cls.pt
 yolov8s-seg.pt
+captures
+data.csv
